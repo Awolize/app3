@@ -1,8 +1,8 @@
+import { FlashList } from "@shopify/flash-list";
+import { Stack, useRouter } from "expo-router";
 import React from "react";
 import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack, useRouter } from "expo-router";
-import { FlashList } from "@shopify/flash-list";
 
 import { api, type RouterOutputs } from "../src/utils/api";
 
@@ -53,7 +53,7 @@ const CreatePost: React.FC = () => {
         placeholder="Title"
       />
       {error?.data?.zodError?.fieldErrors.title && (
-        <Text className="text-red-500 mb-2">
+        <Text className="mb-2 text-red-500">
           {error.data.zodError.fieldErrors.title}
         </Text>
       )}
@@ -65,7 +65,7 @@ const CreatePost: React.FC = () => {
         placeholder="Content"
       />
       {error?.data?.zodError?.fieldErrors.content && (
-        <Text className="text-red-500 mb-2">
+        <Text className="mb-2 text-red-500">
           {error.data.zodError.fieldErrors.content}
         </Text>
       )}
